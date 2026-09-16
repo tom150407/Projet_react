@@ -8,7 +8,13 @@ import "./index.css";
 import Header from "./pages/Menu.tsx";
 import App from "./App.tsx";
 import UserList from "./pages/UserList.tsx";
-import Username from "./pages/Username.tsx";
+
+import Recipe from "./pages/Recipe.tsx";
+
+import NotFound from "./pages/NotFound.tsx";
+import User from "./pages/User.tsx";
+import Login from "./pages/Login.tsx";
+import Profile from "./pages/Profile.tsx";
 
 const Layout = () => {
   return (
@@ -31,10 +37,11 @@ const router = createBrowserRouter([
         path: "/userList",
         element: <UserList />,
       },
-      {
-        path: "/user/:username",
-        element: <Username />,
-      },
+      { path: "/user/:id", element: <User /> },
+      { path: "/recipe/:id", element: <Recipe /> },
+      { path: "*", element: <NotFound /> },
+      { path: "/login", element: <Login /> },
+      { path: "/profile/:id", element: <Profile /> },
     ],
   },
 ]);

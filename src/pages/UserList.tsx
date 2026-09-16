@@ -1,18 +1,19 @@
 import { Link } from "react-router-dom";
+import usersData from "../data/users.json";
 
 function UserList() {
-  const users = ["Paul", "Jean", "Marie"];
-
   return (
-    <div>
-      <h1>Liste des utilisateurs</h1>
+    <main>
+      <h1>User List</h1>
 
-      {users.map((user) => (
-        <div key={user}>
-          <Link to={`/user/${user}`}>{user}</Link>
-        </div>
-      ))}
-    </div>
+      <ul className="user-list">
+        {usersData.users.map((user) => (
+          <li key={user.id}>
+            <Link to={`/user/${user.id}`}>{user.username}</Link>
+          </li>
+        ))}
+      </ul>
+    </main>
   );
 }
 

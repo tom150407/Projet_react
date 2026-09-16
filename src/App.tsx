@@ -1,24 +1,22 @@
 import "./App.css";
-import HelloWorld from "./components/HelloWorld";
+import RecipeCard from "./components/RecipeCard";
+import recipesData from "./data/recipes.json";
 
 function App() {
-  let count: number = 0;
-  let isValid: boolean = true;
+  const recipes = recipesData.recipes;
 
   return (
-    <>
-      <section id="center">
-        <div>
-          {isValid && <HelloWorld name="Ynov.user" />}
+    <main>
+      <h1>Catalogue de recettes</h1>
 
-          {count > 3 ? <div>Important things</div> : <div>Sile things</div>}
+      <h2>Prénom NOM</h2>
 
-          {["pomme", "banane", "poire"].map((el) => (
-            <HelloWorld key={el} name={el} />
-          ))}
-        </div>
+      <section className="recipes-grid">
+        {recipes.map((recipe) => (
+          <RecipeCard key={recipe.id} recipe={recipe} />
+        ))}
       </section>
-    </>
+    </main>
   );
 }
 

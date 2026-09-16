@@ -1,18 +1,15 @@
 import { Link } from "react-router-dom";
 
-function Menu() {
+function Header() {
   return (
-    <nav>
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/userList">Users list</Link>
-        </li>
-      </ul>
-    </nav>
+    <header>
+      <nav>
+        <Link to="/">Accueil</Link>
+        <Link to="/userList">Utilisateurs</Link>
+        <Link to="/login">Connexion</Link>
+      </nav>
+    </header>
   );
 }
 
-export default Menu;
+export default Header;
